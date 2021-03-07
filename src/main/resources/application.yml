@@ -1,0 +1,59 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8084
+spring:
+  profiles: prod
+logging:
+  level:
+    com: trace
+  file:
+#    path: "/springboot/log"
+    name: "info.log"
+  pattern:
+    console: "[Console]%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] %logger{50} - %msg%n"
+    file: "[File]%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] %logger{50} - %msg%n"
+---
+server:
+  port: 8085
+spring:
+  profiles: dev
+#写法一：行内写法
+#person:
+#  name: zhangsan
+#  age: 20
+#  boss: true
+#  birth: 1994/04/29
+#  str1: "zhangsan \n lisi"
+#  str2: 'zhangsan \n lisi'
+#  maps: {key1: value1,key2: value2}
+#  lists: [arr1, arr2, arr 3]
+#  dog:
+#    name: wangcai
+#    age: 1
+#  homeAdd: 武汉
+#  home-add: 武汉（驼峰写法的homeAdd自动转换成这种格式）
+
+#写法二：
+#person:
+#  name: 张三
+#  age: 25
+#  boss: false
+#  birth: 2020/10/5
+#  str1: "zhangsan \n lisi"
+#  str2: 'zhangsan \n lisi'
+#  maps:
+#    key1: value1
+#    key2: value2
+#    key3: value3
+#  lists:
+#    - arr1
+#    - arr2
+#    - arr3
+#  dog:
+#    name: dahuang
+#    age: 1
